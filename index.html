@@ -257,7 +257,7 @@
             TWITTER:
           </div>
           <div class="name">
-            @lazherrera 
+            <span id="twitter_handle"></span> 
           </div>
         </li> 
         <li>
@@ -470,7 +470,9 @@
           }
         })
       });
-      var person_of_interest = ""
+      function handleReturns(data){
+        alert(data)
+      }
       function switchToSecondScreen(){
         $("#loading_box").fadeOut(500, function(){
           $("#input_box").fadeIn(500, function(){
@@ -480,6 +482,8 @@
       function switchToThirdScreen(){
         $("#input_box").fadeOut(500, function(){
           $("#results_box").fadeIn(500, function(){
+            $("#twitter_handle").text($("#input_twitter_handle").val())
+            $.post("/analyze", { twitter_handle: $("#input_twitter_handle").val() }, handleReturns);
           })
         })
       }
