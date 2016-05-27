@@ -24,7 +24,7 @@ module.exports = {
   			var indico = require('indico.io');
 				indico.apiKey =  process.env.INDICO_API_KEY;
 
-				//Process tweets in a future update
+				//Process tweets in a future update (Extract text into array and feed it to INDICO.)
 				res.send('{"status": 200, "handle": "' + req.body.twitter_handle + '", "tweets": "' + JSON.stringify(tweets) + '"}');
   		}else
   		{
