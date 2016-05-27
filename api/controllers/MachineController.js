@@ -8,6 +8,7 @@
 module.exports = {
 
 	analyze: function (req, res) {
+		require('dotenv').config();
 		var Twitter = require('twitter');
  
 		var client = new Twitter({
@@ -23,10 +24,11 @@ module.exports = {
   			var indico = require('indico.io');
 				indico.apiKey =  process.env.INDICO_API_KEY;
 
-				res.send('{"status": 200, "handle": "' + req.body.twitter_handle + '", "tweets": "' + tweets + '"}');
+				//Process tweets in a future update
+				res.send('{"status": 200, "handle": "' + req.body.twitter_handle + '", "tweets": "' + JSON.stringify(tweets) + '"}');
   		}else
   		{
-  			res.send('{"status": 500, "handle": "' + req.body.twitter_handle + '", "error": "Problem accessing twitter"}')
+  			res.send('{"status": 500, "handle": "' + req.body.twitter_handle + '", "error": "' + JSON.stringify(error) + '"}')
   		}
 		});
 	}
