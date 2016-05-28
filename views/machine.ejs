@@ -21,7 +21,7 @@
       </div>
     </div>
 
-    <div class="search" style="margin-top:20px;margin-left:10px;padding-top:0px !important;height: 270px !important">
+    <div class="search" style="margin-top:10px;margin-left:10px;padding-top:0px !important;height: 270px !important">
       <div class="identity">
         <p>EMOTION ANALYSIS</p>
       </div>
@@ -72,7 +72,7 @@
       </div>
     </div>
 
-    <div class="search" style="margin-top:20px;margin-left:10px;padding-top:0px !important;height: 240px !important">
+    <div class="search" style="margin-top:10px;margin-left:10px;padding-top:0px !important;height: 240px !important">
       <div class="identity">
         <p>POLITICAL ANALYSIS</p>
       </div>
@@ -155,7 +155,7 @@
       </div>
     </div>
 
-    <div class="search" style="margin-top:20px;margin-right:10px;padding-top:0px !important;height:245px !important">
+    <div class="search" style="margin-top:10px;margin-right:10px;padding-top:0px !important;height:245px !important">
       <div class="identity">
         <p>PLACES ANALYSIS</p>
       </div>
@@ -191,7 +191,7 @@
       </div>
     </div>
 
-    <div class="search" style="margin-top:20px;margin-right:10px;padding-top:0px !important;height:245px !important">
+    <div class="search" style="margin-top:10px;margin-right:10px;padding-top:0px !important;height:245px !important">
       <div class="identity">
         <p>ORGANIZATION ANALYSIS</p>
       </div>
@@ -231,7 +231,7 @@
 
     <div id="center" class='col-lg-4'>
     <!-- MIDDLE SIDE -->
-    <div class="search" style="margin-top:50px;padding-top:0px !important;height:200px !important">
+    <div class="search" style="margin-top:0px;padding-top:0px !important;height:200px !important">
       <div class="identity">
         <p>PERSON OF INTEREST</p>
       </div>
@@ -258,7 +258,21 @@
       </div>
     </div>
 
-   <div class="search" style="margin-top:20px;padding-top:0px !important;height: 240px !important">
+    <div class="search" style="margin-top:10px;padding-top:0px !important">
+      <div class="identity">
+        <p>EVALUATING STRATEGIES</p>
+      </div>
+      <div class="search-assets">
+       <p>MULTIPLE STRATEGIES AVAILABLE</p>
+      </div>
+      <div class="assets">
+      	<ul id="zoomout_options">
+      	</ul>
+      </div>
+    </div>
+
+
+   <div class="search" style="margin-top:10px;padding-top:0px !important;height: 240px !important">
       <div class="identity">
         <p>PERSONALITY ANALYSIS</p>
       </div>
@@ -301,7 +315,7 @@
       </div>
     </div>
 
-    <div class="search" style="margin-top:20px;padding-top:0px !important;height: 275px !important">
+    <div class="search" style="margin-top:10px;padding-top:0px !important;height: 275px !important">
       <div class="identity">
         <p>PERSONA ANALYSIS</p>
       </div>
@@ -456,9 +470,20 @@
             switchToThirdScreen();
           }
         })
+        var target = ""
+        for (i = 322284; i < 372284; i += 2){
+        	target += '<li><div class="name">OPTION ' + i + '</div><div class="name">OPTION ' + (i+1) + '</div></li>'
+        }
+        $("#zoomout_options").append(target);
+        $("#zoomout_options").Morphist({
+          animateIn: 'fadeInUp',
+          animateOut: 'fadeOutUp',
+          speed: 50
+        });
       });
       function handleReturns(data){
-        alert(data)
+      	console.log(data);
+        alert(data);
       }
       function switchToSecondScreen(){
         $("#loading_box").fadeOut(500, function(){
@@ -477,7 +502,7 @@
       $("#zoomout").Morphist({
           animateIn: 'fadeInUp',
           animateOut: 'fadeOutUp',
-          speed: 0,
+          speed: 500,
           complete: function(){
             if ($("#last_item").hasClass('animated')){
               $("#loading_text").text("OPERATOR CONTROL ACTIVE")
