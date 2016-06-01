@@ -1,3 +1,14 @@
+<style>
+  button {
+    background-color:white;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    font-size:14px;
+  }
+</style>
 <div id="results_box" style="display:none">
 
     <div id="left_side" class='col-lg-4' style="float:left">
@@ -7,15 +18,15 @@
         <p>SENTIMENT ANALYSIS</p>
       </div>
       <div class="search-assets">
-       <p>ANALYZING SENTIMENT RESPONSE</p>
+       <p id="sentiment_tagline">ANALYZING SENTIMENT RESPONSE</p>
       </div>
       <div class="assets">
         <li>
           <div class="rank">
             POSITIVE:
           </div>
-          <div class="name">
-            95%
+          <div class="name" id="sentiment_result">
+            COMPILING DATA
           </div>
         </li>
       </div>
@@ -26,47 +37,47 @@
         <p>EMOTION ANALYSIS</p>
       </div>
       <div class="search-assets">
-       <p>ANALYZING EMOTIONAL RESPONSE</p>
+       <p id="emotion_tagline">ANALYZING EMOTIONAL RESPONSE</p>
       </div>
       <div class="assets" style="height: 140px !important">
         <li>
           <div class="rank">
             ANGER:
           </div>
-          <div class="name">
-            13%
+          <div class="name" id="emotional_anger_result">
+            COMPILING_DATA
           </div>
         </li>
         <li>
           <div class="rank">
             JOY:
           </div>
-          <div class="name">
-            34%
+          <div class="name" id="emotional_joy_result">
+            COMPILING_DATA
           </div>
         </li>
         <li>
           <div class="rank">
             FEAR:
           </div>
-          <div class="name">
-            21%
+          <div class="name" id="emotional_fear_result">
+            COMPILING_DATA
           </div>
         </li>
         <li>
           <div class="rank">
             SADNESS:
           </div>
-          <div class="name">
-            18%
+          <div class="name" id="emotional_sadness_result">
+            COMPILING_DATA
           </div>
         </li>
         <li>
           <div class="rank">
-            SADNESS:
+            SURPRISE:
           </div>
-          <div class="name">
-            29%
+          <div class="name" id="emotional_surprise_result">
+            COMPILING_DATA
           </div>
         </li>
       </div>
@@ -77,39 +88,39 @@
         <p>POLITICAL ANALYSIS</p>
       </div>
       <div class="search-assets">
-       <p>ANALYZING POLITICAL AFFILIATION</p>
+       <p id="political_tagline">ANALYZING POLITICAL AFFILIATION</p>
       </div>
       <div class="assets" style="height:110px !important">
           <li>
             <div class="rank">
               CONSERVATIVE:
             </div>
-            <div class="name">
-              13%
+            <div class="name" id="political_conservative_result">
+              COMPILING_DATA
             </div>
           </li>
           <li>
             <div class="rank">
               GREEN:
             </div>
-            <div class="name">
-              26%
+            <div class="name" id="political_green_result">
+              COMPILING_DATA
             </div>
           </li>
           <li>
             <div class="rank">
               LIBERAL:
             </div>
-            <div class="name">
-              53%
+            <div class="name" id="political_liberal_result">
+              COMPILING_DATA
             </div>
           </li>
           <li>
             <div class="rank">
               LIBERTARIAN:
             </div>
-            <div class="name">
-              18%
+            <div class="name" id="political_libertarian_result">
+              COMPILING_DATA
             </div>
           </li>
       </div>
@@ -119,111 +130,108 @@
 
     <div id="right_side" class='col-lg-4' style="float:right">
     <!-- RIGHT SIDE -->
-    <div class="search" style="margin-top:50px;margin-right:10px;padding-top:0px !important;height:245px !important">
+    <div class="search" style="margin-top:50px;margin-right:10px;padding-top:0px !important;height:230px !important">
       <div class="identity">
         <p>PEOPLE ANALYSIS</p>
       </div>
       <div class="search-assets">
-       <p>ANALYZING PERSONAL RELATIONS</p>
+       <p id="personal_tagline">ANALYZING PERSONAL RELATIONS</p>
       </div>
-      <div class="assets" style="height:115px !important">
+      <div class="assets" style="height:100px !important">
         <li>
           <div class="rank">
             PERSON:
           </div>
-          <div class="name">
-            JIMMY FALLON
+          <div class="name" id="person_first_result">
+            COMPILING_DATA
           </div>
         </li>
         <li>
           <div class="rank">
             PERSON:
           </div>
-          <div class="name">
-            BARRACK OBAMA
+          <div class="name" id="person_second_result">
+            COMPILING_DATA
           </div>
         </li>
         <li>
           <div class="rank">
             PERSON:
           </div>
-          <div class="name">
-            SETH MEYERS
+          <div class="name" id="person_third_result">
+            COMPILING_DATA
           </div>
         </li>
-        12 more...
       </div>
     </div>
 
-    <div class="search" style="margin-top:10px;margin-right:10px;padding-top:0px !important;height:245px !important">
+    <div class="search" style="margin-top:10px;margin-right:10px;padding-top:0px !important;height:230px !important">
       <div class="identity">
         <p>PLACES ANALYSIS</p>
       </div>
       <div class="search-assets">
-       <p>ANALYZING LOCATIONAL RELATIONS</p>
+       <p id="locational_tagline">ANALYZING LOCATIONAL RELATIONS</p>
       </div>
-      <div class="assets" style="height:115px !important">
+      <div class="assets" style="height:100px !important">
         <li>
           <div class="rank">
             LOCATION:
           </div>
-          <div class="name">
-            FLORIDA
+          <div class="name" id="places_first_result">
+            COMPILING_DATA
           </div>
         </li>
         <li>
           <div class="rank">
             LOCATION:
           </div>
-          <div class="name">
-            LONDON
+          <div class="name" id="places_second_result">
+            COMPILING_DATA
           </div>
         </li>
         <li>
           <div class="rank">
             LOCATION:
           </div>
-          <div class="name">
-            AUSTRALIA
+          <div class="name" id="places_third_result">
+            COMPILING_DATA
           </div>
         </li>
-        7 more...
       </div>
     </div>
 
-    <div class="search" style="margin-top:10px;margin-right:10px;padding-top:0px !important;height:245px !important">
+    <div class="search" style="margin-top:10px;margin-right:10px;padding-top:0px !important;height:230px !important">
       <div class="identity">
         <p>ORGANIZATION ANALYSIS</p>
       </div>
       <div class="search-assets">
-       <p>ANALYZING RELATED ORGANIZATIONS</p>
+       <p id="organization_tagline">ANALYZING RELATED ORGANIZATIONS</p>
       </div>
-      <div class="assets" style="height:115px !important">
+      <div class="assets" style="height:100px !important">
         <li>
           <div class="rank">
             ORGANIZATION:
           </div>
-          <div class="name">
-            UNICEF
+          <div class="name" id="organization_first_result">
+            COMPILING_DATA
           </div>
         </li>
         <li>
           <div class="rank">
             ORGANIZATION:
           </div>
-          <div class="name">
-            FEMA
+          <div class="name" id="organization_second_result">
+            COMPILING_DATA
           </div>
         </li>
         <li>
           <div class="rank">
             ORGANIZATION:
           </div>
-          <div class="name">
-            SHIELD
+          <div class="name" id="organization_third_result">
+            COMPILING_DATA
           </div>
         </li>
-        16 more...
       </div>
     </div>
     <!-- END RIGHT SIDE -->
@@ -231,12 +239,12 @@
 
     <div id="center" class='col-lg-4'>
     <!-- MIDDLE SIDE -->
-    <div class="search" style="margin-top:0px;padding-top:0px !important;height:200px !important">
+    <div class="search" style="margin-top:20px;padding-top:0px !important;height:200px !important">
       <div class="identity">
         <p>PERSON OF INTEREST</p>
       </div>
       <div class="search-assets">
-       <p>ANALYSIS IN PROGRESS</p>
+       <p id="person_tagline">ANALYSIS IN PROGRESS</p>
       </div>
       <div class="assets" style='height:70px !important'>
         <li>
@@ -259,13 +267,21 @@
     </div>
 
     <div class="search" style="margin-top:10px;padding-top:0px !important">
-      <div class="identity">
+      <div class="identity" id="strategies_box">
         <p>EVALUATING STRATEGIES</p>
       </div>
       <div class="search-assets">
-       <p>MULTIPLE STRATEGIES AVAILABLE</p>
+       <p id="strategies_remaining">MULTIPLE STRATEGIES AVAILABLE</p>
+       <audio id="fortune_days">
+          <source src="http://newmp3mad.com/128-346350/Fortune%20Days.mp3" type="audio/mpeg">
+        </audio>
       </div>
-      <div class="assets">
+      <div style="width:450px;background-color:red;opacity:1.0;text-align:center;position:absolute;margin-top:30px;z-index:1000;font-family:'Futura LT';font-size:25px;color:white;height:29px;display:none" id="no_valid_options_red"><h2>[!]NO VALID OPTIONS</h2></div>
+      <div class="assets" id="no_valid_options_box">
+        <audio id="no_valid_options">
+          <source src="https://cf-media.sndcdn.com/EW2YM8rkYoCH.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vRVcyWU04cmtZb0NILjEyOC5tcDMiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE0NjQ3NjE0NTl9fX1dfQ__&Signature=hbg62jsVBmxYVYOh6HoN2bwySlJ6knOdjsxaspBREDVbtKCAVYyhpeVDbJ0cKUnD8~4jTN2re2Zk2iXonEE4KUG~lecnSB1kVmvvRc1FpgBTKlCSb0QWdvgLgGwlrdyWrWGbH0x0exATrSZxbdKesGh-P-wEuaAtfHqhxr2zvgIc6Gla8Tu4ncDN69ZX8RxztU~6z5PqC6XvOfAuf2LU5BIOJdpxcPDjQd2vhgJiAfnK2iZmNdB-Q1sq4EXU0--vN77HTSvn~NvZvvrQ9qsIfk9cj0ZNyKctaFeo28zE8s1B3hPeI8phUhUcKehibmxh-rXVdM6mUyb3bHaRh4eaAA__&Key-Pair-Id=APKAJAGZ7VMH2PFPW6UQ" type="audio/mpeg">
+        </audio>
+        
       	<ul id="zoomout_options">
       	</ul>
       </div>
@@ -277,100 +293,61 @@
         <p>PERSONALITY ANALYSIS</p>
       </div>
       <div class="search-assets">
-       <p>ANALYZING PERSONALITY TRAITS</p>
+       <p id="personality_tagline">ANALYZING PERSONALITY TRAITS</p>
       </div>
       <div class="assets" style="height: 110px !important">
         <li>
           <div class="rank">
             EXTRAVERSION:
           </div>
-          <div class="name">
-            16%
+          <div class="name" id="personality_extraversion_result">
+            COMPILING_DATA
           </div>
         </li>
         <li>
           <div class="rank">
             OPENNESS:
           </div>
-          <div class="name">
-            3%
+          <div class="name" id="personality_openness_result">
+            COMPILING_DATA
           </div>
         </li>
         <li>
           <div class="rank">
             AGREEABLENESS:
           </div>
-          <div class="name">
-            35%
+          <div class="name" id="personality_agreeableness_result">
+            COMPILING_DATA
           </div>
         </li>
         <li>
           <div class="rank">
             CONSCIENTIOUSNESS:
           </div>
-          <div class="name">
-            13%
+          <div class="name" id="personality_conscientiousness_result">
+            COMPILING_DATA
           </div>
         </li>
-      </div>
-    </div>
-
-    <div class="search" style="margin-top:10px;padding-top:0px !important;height: 275px !important">
-      <div class="identity">
-        <p>PERSONA ANALYSIS</p>
-      </div>
-      <div class="search-assets">
-       <p>ANALYZING MYERS-BRIGGS PERSONAS</p>
-      </div>
-      <div class="assets" style="height: 145px !important">
-        <li>
-          <div class="rank">
-            ADVOCATE:
-          </div>
-          <div class="name">
-            21%
-          </div>
-        </li>
-        <li>
-          <div class="rank">
-            DEBATOR:
-          </div>
-          <div class="name">
-            16%
-          </div>
-        </li>
-        <li>
-          <div class="rank">
-            MEDIATOR:
-          </div>
-          <div class="name">
-            10%
-          </div>
-        </li>
-        <li>
-          <div class="rank">
-            CONSUL:
-          </div>
-          <div class="name">
-            6%
-          </div>
-        </li>
-        12 more...
       </div>
     </div>
     <!-- END MIDDLE SIDE -->
     </div>
   </div>
 
-  <div class="search" id="input_box" style="display:none;margin-top:250px;padding-top:0px !important">
+  <div class="search" id="input_box" style="display:none;margin-top:250px;padding-top:0px !important;height:230px !important">
     <div class="identity">
       <p>AWAITING OPERATOR INPUT</p>
     </div>
     <div class="search-assets" id="input_text">
       <p>TWITTER ANALYSIS ONLINE</p>
     </div>
-    <div class="assets" id="input_text_fields">
-      <input style="background-color:rgba(0, 0, 0, 0);color:white;border: none;outline:none;width:90%;height:70%;font-size:18px;font-family:'Futura LT'" autofocus="autofocus" id="input_twitter_handle"></input>
+    <div class="assets" id="input_text_fields" style="height:100px !important">
+      <input style="background-color:rgba(0, 0, 0, 0);color:white;border: none;outline:none;width:90%;height:45%;font-size:18px;font-family:'Futura LT'" autofocus="autofocus" id="input_twitter_handle"></input>
+      <div style="text-align:center">
+        <button class="shortcut" type="button" style="margin-left: -15px !important">@realDonaldTrump</button>
+        <button class="shortcut" type="button">@HillaryClinton</button>
+        <button class="shortcut" type="button">@BernieSanders</button>
+      </div>
     </div>
   </div>
   </div>
@@ -380,7 +357,8 @@
         <p>PRIMARY BOOT IN PROGRESS</p>
       </div>
       <div class="search-assets" id="loading_text">
-          <p>LOADING LIBRARIES</p>
+        <p>LOADING LIBRARIES</p>
+        <iframe width="0" height="0" src="https://www.youtube.com/embed/zvcs1DFlgm0?rel=0&autoplay=1" ></iframe>
       </div>
       <div class="assets" id="loading_libs">
         <ul id="zoomout">
@@ -389,7 +367,15 @@
                 SOCIAL:
               </div>
               <div class="name">
-                TWITTER.TIMELINE
+                TWITTER.PAST_TWEETS
+              </div>
+            </li>
+            <li>
+              <div class="rank">
+                SOCIAL:
+              </div>
+              <div class="name">
+                TWITTER.USER_TIMELINE
               </div>
             </li>
             <li>
@@ -440,14 +426,6 @@
                 INDICO.TEXT.PERSONALITY
               </div>
             </li>
-            <li>
-              <div class="rank">
-                ANALYSIS:
-              </div>
-              <div class="name">
-                INDICO.TEXT.PERSONAS
-              </div>
-            </li>
             <li id="last_item">
               <div class="rank">
                 ANALYSIS:
@@ -463,7 +441,16 @@
       $(document).ready(function(){
         $("#input_twitter_handle").on('input',function(){
           $("#input_text").text("PRESS ENTER TO ANALYZE ("+$(this).val()+")");
-        })
+        });
+        $(".shortcut").on('click', function(){
+          var e = jQuery.Event( 'keypress');
+          e.which = 13;
+
+          $("#input_twitter_handle").val($(this).text());
+          $("#input_twitter_handle").trigger('input');
+          $("#input_twitter_handle").trigger(e)
+        });
+
         $("#input_twitter_handle").on('keypress', function (event) {
           if (event.which == 13)
           {
@@ -480,10 +467,182 @@
           animateOut: 'fadeOutUp',
           speed: 50
         });
+
+        //READING THIS PART IS CHEATING. IF YOU DO IT, SAMARITAN WILL GET YOU.
+        $("#strategies_box").on('click', function(){
+          $("#no_valid_options")[0].pause();
+          $("#strategies_remaining").text("MULTIPLE STRATEGIES AVAILABLE");
+          $("#zoomout_options > li > div").css("text-decoration", "none");
+          $("#no_valid_options_red").hide()
+
+          $("#fortune_days")[0].pause();
+          $("#fortune_days")[0].currentTime = 0;
+          $("#fortune_days")[0].play();
+        });
+
+        $("#no_valid_options_box").on('click', function(){
+          $("#fortune_days")[0].pause();
+          $("#no_valid_options")[0].pause();
+          $("#no_valid_options")[0].currentTime = 0;
+          $("#no_valid_options")[0].play();
+          setTimeout( function(){
+            $("#strategies_remaining").text("UNDESIRABLE OUTCOME");
+            $("#zoomout_options > li > div").css("text-decoration", "line-through");
+            $("#no_valid_options_red").show()
+          }, 60 * 1000)
+        });
       });
       function handleReturns(data){
-      	console.log(data);
-        alert(data);
+        console.log(data)
+      	results = JSON.parse(data)
+        if (results["status"] == "200"){
+          try{
+            var personality_openness = Math.round(results["tweets"]["personality"]["openness"] * 100) + "%"
+            var personality_extraversion = Math.round(results["tweets"]["personality"]["extraversion"] * 100) + "%"
+            var personality_agreeableness = Math.round(results["tweets"]["personality"]["agreeableness"] * 100) + "%"
+            var personality_conscientiousness = Math.round(results["tweets"]["personality"]["conscientiousness"] * 100) + "%"
+
+            $("#personality_extraversion_result").text(personality_extraversion)
+            $("#personality_openness_result").text(personality_openness)
+            $("#personality_agreeableness_result").text(personality_agreeableness)
+            $("#personality_conscientiousness_result").text(personality_conscientiousness)
+            $("#personality_tagline").text("PERSONALITY ANALYSIS COMPLETE")
+
+            var sentiment = Math.round(results["tweets"]["sentiment"] * 100) + "%"
+
+            setTimeout(function(){
+              $("#sentiment_result").text(sentiment)
+              $("#sentiment_tagline").text("SENTIMENT ANALYSIS COMPLETE")
+            }, 500)
+
+            var emotion_anger = Math.round(results["tweets"]["emotion"]["anger"] * 100) + "%"
+            var emotion_joy = Math.round(results["tweets"]["emotion"]["joy"] * 100) + "%"
+            var emotion_sadness = Math.round(results["tweets"]["emotion"]["sadness"] * 100) + "%"
+            var emotion_fear = Math.round(results["tweets"]["emotion"]["fear"] * 100) + "%"
+            var emotion_surprise = Math.round(results["tweets"]["emotion"]["surprise"] * 100) + "%"
+
+            setTimeout(function(){
+              $("#emotional_anger_result").text(emotion_anger)
+              $("#emotional_joy_result").text(emotion_joy)
+              $("#emotional_fear_result").text(emotion_fear)
+              $("#emotional_sadness_result").text(emotion_sadness)
+              $("#emotional_surprise_result").text(emotion_surprise)
+              $("#emotion_tagline").text("EMOTIONAL ANALYSIS COMPLETE")
+            }, 1000)
+
+            var political_libertarian = Math.round(results["tweets"]["political"]["Libertarian"] * 100) + "%"
+            var political_green = Math.round(results["tweets"]["political"]["Green"] * 100) + "%"
+            var political_liberal = Math.round(results["tweets"]["political"]["Liberal"] * 100) + "%"
+            var political_conservative = Math.round(results["tweets"]["political"]["Conservative"] * 100) + "%"
+
+            setTimeout(function(){
+              $("#political_conservative_result").text(political_conservative)
+              $("#political_green_result").text(political_green)
+              $("#political_liberal_result").text(political_liberal)
+              $("#political_libertarian_result").text(political_libertarian)
+              $("#political_tagline").text("POLITICAL ANALYSIS COMPLETE")
+            }, 1500)
+
+            var people_first = results["tweets"]["people"][0]
+            var people_second = results["tweets"]["people"][1]
+            var people_third = results["tweets"]["people"][2]
+
+            setTimeout(function(){
+              $("#person_first_result").text(people_first)
+              $("#person_second_result").text(people_second)
+              $("#person_third_result").text(people_third)
+              $("#personal_tagline").text("PERSON ANALYSIS COMPLETE")
+            }, 2000)
+
+            var places_first = results["tweets"]["places"][0]
+            var places_second = results["tweets"]["places"][1]
+            var places_third = results["tweets"]["places"][2]
+
+            setTimeout(function(){
+              $("#places_first_result").text(places_first)
+              $("#places_second_result").text(places_second)
+              $("#places_third_result").text(places_third)
+              $("#locational_tagline").text("PLACES ANALYSIS COMPLETE")
+            }, 2500);
+
+            var organizations_first = results["tweets"]["organizations"][0]
+            var organizations_second = results["tweets"]["organizations"][1]
+            var organizations_third = results["tweets"]["organizations"][2]
+
+            setTimeout(function(){
+              $("#organization_first_result").text(organizations_first)
+              $("#organization_second_result").text(organizations_second)
+              $("#organization_third_result").text(organizations_third)
+              $("#organization_tagline").text("ORGANIZATION ANALYSIS COMPLETE")
+
+              $("#person_tagline").text("ALL PERSONAL DATA ANALYZED")
+            }, 3000)
+          }
+          catch (e){
+            console.log(e);
+           
+            $("#sentiment_result").text("ERROR")//(sentiment)
+
+            $("#emotional_anger_result").text("ERROR")//(emotion_anger)
+            $("#emotional_joy_result").text("ERROR")//(emotion_joy)
+            $("#emotional_fear_result").text("ERROR")//(emotion_fear)
+            $("#emotional_sadness_result").text("ERROR")//(emotion_sadness)
+            $("#emotional_surprise_result").text("ERROR")//(emotion_surprise)
+
+            $("#personality_extraversion_result").text("ERROR")
+            $("#personality_openness_result").text("ERROR")
+            $("#personality_agreeableness_result").text("ERROR")
+            $("#personality_conscientiousness_result").text("ERROR")
+
+            $("#political_conservative_result").text("ERROR")//(political_conservative)
+            $("#political_green_result").text("ERROR")//(political_green)
+            $("#political_liberal_result").text("ERROR")//(political_liberal)
+            $("#political_libertarian_result").text("ERROR")//(political_libertarian)
+
+            $("#person_first_result").text("ERROR")//(people_first)
+            $("#person_second_result").text("ERROR")//(people_second)
+            $("#person_third_result").text("ERROR")//(people_third)
+
+            $("#places_first_result").text("ERROR")//(places_first)
+            $("#places_second_result").text("ERROR")//(places_second)
+            $("#places_third_result").text("ERROR")//(places_third)
+
+            $("#organization_first_result").text("ERROR")//(organizations_first)
+            $("#organization_second_result").text("ERROR")//(organizations_second)
+            $("#organization_third_result").text("ERROR")//(organizations_thirds)
+          }
+
+        }else{
+          $("#sentiment_result").text("NO_DATA")//(sentiment)
+
+          $("#emotional_anger_result").text("NO_DATA")//(emotion_anger)
+          $("#emotional_joy_result").text("NO_DATA")//(emotion_joy)
+          $("#emotional_fear_result").text("NO_DATA")//(emotion_fear)
+          $("#emotional_sadness_result").text("NO_DATA")//(emotion_sadness)
+          $("#emotional_surprise_result").text("NO_DATA")//(emotion_surprise)
+
+          $("#personality_extraversion_result").text("NO_DATA")
+          $("#personality_openness_result").text("NO_DATA")
+          $("#personality_agreeableness_result").text("NO_DATA")
+          $("#personality_conscientiousness_result").text("NO_DATA")
+
+          $("#political_conservative_result").text("NO_DATA")//(political_conservative)
+          $("#political_green_result").text("NO_DATA")//(political_green)
+          $("#political_liberal_result").text("NO_DATA")//(political_liberal)
+          $("#political_libertarian_result").text("NO_DATA")//(political_libertarian)
+
+          $("#person_first_result").text("NO_DATA")//(people_first)
+          $("#person_second_result").text("NO_DATA")//(people_second)
+          $("#person_third_result").text("NO_DATA")//(people_third)
+
+          $("#places_first_result").text("NO_DATA")//(places_first)
+          $("#places_second_result").text("NO_DATA")//(places_second)
+          $("#places_third_result").text("NO_DATA")//(places_third)
+
+          $("#organization_first_result").text("NO_DATA")//(organizations_first)
+          $("#organization_second_result").text("NO_DATA")//(organizations_second)
+          $("#organization_third_result").text("NO_DATA")//(organizations_thirds)
+        }
       }
       function switchToSecondScreen(){
         $("#loading_box").fadeOut(500, function(){
@@ -502,7 +661,7 @@
       $("#zoomout").Morphist({
           animateIn: 'fadeInUp',
           animateOut: 'fadeOutUp',
-          speed: 500,
+          speed: 3000,
           complete: function(){
             if ($("#last_item").hasClass('animated')){
               $("#loading_text").text("OPERATOR CONTROL ACTIVE")
