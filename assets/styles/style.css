@@ -152,9 +152,6 @@ body {
     background: #2e2d2f;
     padding: 0px;
 }
-.after-load {
-  displa: flex;
-}
 .search {
     margin: 0 auto;
     width: 450px;
